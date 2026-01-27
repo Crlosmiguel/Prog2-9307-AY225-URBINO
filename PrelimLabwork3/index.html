@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prelim Grade Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c2f7a;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-top: 15px;
+        }
+
+        label {
+            font-weight: 600;
+            margin-top: 12px;
+            display: block;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 6px rgba(102,126,234,0.5);
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea, #5a67d8);
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #5a67d8, #4c51bf);
+        }
+
+        button:active {
+            transform: scale(0.96);
+        }
+
+        .output {
+            margin-top: 22px;
+            padding: 15px;
+            background: #f4f6ff;
+            border-left: 5px solid #667eea;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #333;
+            white-space: pre-line;
+            font-family: "Courier New", monospace;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: none;
+            height: 1px;
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>📘 Prelim Grade Calculator</h2>
+    <div class="subtitle">Compute required Prelim Exam score</div>
+
+    <hr>
+
+    <div class="section">
+        <label>📅 Attendance Grade</label>
+        <input type="number" id="attendance" placeholder="Enter attendance score">
+
+        <label>🧪 Lab Work 1</label>
+        <input type="number" id="lab1" placeholder="Enter lab work 1 score">
+
+        <label>🧪 Lab Work 2</label>
+        <input type="number" id="lab2" placeholder="Enter lab work 2 score">
+
+        <label>🧪 Lab Work 3</label>
+        <input type="number" id="lab3" placeholder="Enter lab work 3 score">
+    </div>
+
+    <button onclick="computeGrades()">Compute Grades</button>
+
+    <div class="output" id="output"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
